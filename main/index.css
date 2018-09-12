@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|PT+Serif+Caption');
+body,
+html {
+    margin: 0;
+    font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+}
+
+#page {
+    display: grid;
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-rows: 4em 1fr auto;
+    grid-template-columns: 1fr 100em 1fr;
+    grid-template-areas: "headerside1 header  headerside2" "na1         content na2" "footerside1 footer  footerside2";
+}
+
+@media only screen and (max-width: 100em) {
+    #page {
+        grid-template-columns: 0fr 1fr 0fr;
+    }
+}
+
+#h {
+    z-index: 100;
+    grid-area: header;
+}
+
+.h_colour {
+    background-color: #f8f9fa;
+}
+
+#h_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 18em auto auto auto auto 0.8fr;
+    grid-template-rows: 4em;
+}
+
+.h_menu_elem {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 100%;
+}
+
+#h_oxbridge_help_logo_img {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://oxbridgehelp.org/images/OxbridgeHelp.png");
+    background-size: auto 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.h_menu_button {
+    grid-column: span 1;
+    grid-row: span 1;
+    text-align: center;
+    display: table;
+    font-size: 1.5em;
+    color: #000000;
+    transition: color 0.1s;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.h_menu_button:hover {
+    color: #18678f;
+}
+
+.h_mnbt_textwrap {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "PT Sans", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding-top: 0.1em;
+    font-weight: bold;
+}
+
+.h_menu_hoverable {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.1s;
+}
+
+.h_menu_hoverable:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#c {
+    background-color: #fff;
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "main main" "who_we_are get_in_touch";
+    grid-template-columns: 1fr 1fr;
+}
+
+#container_main {
+    width: 100%;
+    padding: 3em;
+    background-image: url("https://oxbridgehelp.org/images/bg04.png");
+    background-size: cover;
+    box-sizing: border-box;
+    grid-area: main;
+}
+
+#who_we_are {
+    grid-area: who_we_are;
+    background-color: #f1f1f1;
+    padding: 1em 1.5em;
+}
+
+#get_in_touch {
+    grid-area: get_in_touch;
+    background-color: #c4ebff;
+    padding: 1em 1.5em;
+}
+
+.c_title {
+    font-family: 'PT Sans Narrow';
+    font-weight: bold;
+    font-size: 4em;
+}
+
+.c_caption {
+    font-family: 'PT Sans Narrow';
+    font-size: 1.8em;
+    opacity: 0.9;
+}
+
+#f {
+    grid-area: footer;
+    display: inline-grid;
+    font-family: "PT Sans Caption";
+    padding: 0 1.5em;
+}
+
+.f_colour {
+    background-color: #5b90ab;
+}
+
+.f_element {
+    grid-row: 1/ span 1;
+    grid-column: span 1;
+}
+
+.f_title {
+    margin-top: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.f_list {
+    list-style-type: none;
+    margin: 1em 0 1.5em 0;
+    padding-left: 0;
+}
+
+.f_list li {
+    margin-top: .4em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.1s;
+}
+
+.f_list li:hover {
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.searchbox {
+    resize: none;
+    border: 0;
+}
